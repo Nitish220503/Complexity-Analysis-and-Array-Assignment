@@ -1,1 +1,179 @@
+Ques1:Q1: Take m and n input from the user and m * n integer inputs from user and print the following:
+number of positive numbers
+number of negative numbers
+number of odd numbers
+number of even numbers
+number of 0.
+Ans-
+package ARRAY_2D;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Practice1 {
+    static void num(int[][] arr,int m, int n){
+        int pos=0,neg=0,odd=0,even=0,zero=0;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(arr[i][j]>0){
+                    pos++;
+                }
+                if(arr[i][j]<0){
+                    neg++;
+                }
+                if(arr[i][j]%2!=0){
+                    odd++;
+                }
+                if(arr[i][j]%2==0){
+                    even++;
+                }
+                if(arr[i][j]==0){
+                    zero++;
+                }
+            }
+        }
+System.out.println("number of positive numbers "+ pos);
+System.out.println("number of negative numbers " + neg);
+System.out.println("number of odd numbers "+ odd);
+System.out.println("number of even numbers "+ even);
+System.out.println("number of 0 "+ zero);
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the no. of rows");
+        int m=sc.nextInt();
+        System.out.println("Enter the no. of columns");
+        int n=sc.nextInt();
+        int[][] arr=new int[m][n];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        sc.close();
+        for(var e: arr){
+            System.out.println(Arrays.toString(e));
+        }
+        num(arr,m,n);
+    }
+}
+
+
+Ques2:write a program to print the elements above the secondary diagonal in a user inputted
+square matrix.
+Ans-
+package ARRAY_2D;
+import java.util.*;
+import java.util.Scanner;
+public class Practice2 {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the no. of rows");
+        int m=sc.nextInt();
+        System.out.println("Enter the no. of columns");
+        int n=sc.nextInt();
+        int[][] arr=new int[m][n];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        sc.close();
+        for(var e: arr){
+            System.out.println(Arrays.toString(e));
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(i+j<(n-1)){
+                    System.out.println(arr[i][j]);
+                }
+            }
+        }
+    }
+}
+
+Ques 3:write a program to print the elements of both the diagonals in a user inputted square matrix
+in any order.
+Ans-
+package ARRAY_2D;
+import java.util.*;
+import java.util.Scanner;
+public class Practice2 {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the no. of rows");
+        int m=sc.nextInt();
+        System.out.println("Enter the no. of columns");
+        int n=sc.nextInt();
+        int[][] arr=new int[m][n];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        sc.close();
+        for(var e: arr){
+            System.out.println(Arrays.toString(e));
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(i+j==(n-1)|| i==j){
+                    System.out.println(arr[i][j]);
+                }
+            }
+        }
+    }
+}
+
+Ques 4-Write a program to find the largest element of a given 2D array of integers.
+Ans-
+package ARRAY_2D;
+public class Practice3 {
+    // Question-4
+    public static void main(String[] args) {
+        int[][] arr={
+            {1,2,4,0},
+            {2,5,7,-1},
+            {4,2,6,9}
+        };
+        int max=arr[0][0];
+        int m=arr.length;
+        int n=arr[0].length;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(arr[i][j]>max){
+                    max=arr[i][j];
+                }
+            }
+        }
+        System.out.println(max);
+        
+    }
+}
+
+Ques 5- Write a function which accepts a 2D array of integers and its size as arguments and
+displays the elements of middle row and the elements of middle column. Printing can
+be done in any order.
+[Assuming the 2D Array to be a square matrix with odd dimensions i.e. 3x3, 5x5, 7x7 etc...]
+Ans-
+public class Practice3 {
+    public static void main(String[] args) {
+        int[][] arr={
+            {1,2,3,4,5},
+            {3,4,5,6,7},
+            {7,6,5,4,3},
+            {8,7,6,5,4},
+            {1,2,37,8,0}
+        };
+        int m=arr.length;
+        int n=arr[0].length;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(j==(n-1)/2||i==(n-1)/2) {
+                    System.out.println(arr[i][j]);
+                }
+            }
+        }
+        
+    }
+}
+
 
